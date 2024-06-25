@@ -142,6 +142,14 @@
      be invisible. Use JavaScript to change the
      opacity and make it visible. */
   opacity: 0;
+  transition: all 0.9s;
+}
+.added {
+  color: rgb(6, 125, 98);
+  font-size: 16px;
+  opacity: 1;
+  transition: all 0.9s;
+
 }
 
 .added-to-cart img {
