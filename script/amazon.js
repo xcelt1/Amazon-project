@@ -34,6 +34,7 @@ import { products } from "../data/products.js";
 
 import { formateCurrency } from "./Utiity/money.js";
 
+updateCartQuantity();
 
 let productsHtml = '';
 
