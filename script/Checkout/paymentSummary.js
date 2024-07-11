@@ -26,7 +26,7 @@ export function renderPaymentSummary () {
           </div>
 
           <div class="payment-summary-row">
-            <div>Items (3):</div>
+            <div class ="js-items"></div>
             <div class="payment-summary-money">$${formateCurrency(productPriceCents)}</div>
           </div>
 
@@ -47,7 +47,7 @@ export function renderPaymentSummary () {
 
           <div class="payment-summary-row total-row">
             <div>Order total:</div>
-            <div class="payment-summary-money">$${formateCurrency(to)}</div>
+            <div class="payment-summary-money">$${formateCurrency(totalCents)}</div>
           </div>
 
           <button class="place-order-button button-primary">
@@ -58,5 +58,15 @@ export function renderPaymentSummary () {
     document.querySelector(".js-payment-summary")
     .innerHTML = paymentSummaryHtml;
   })
-   
+
+  updateCartQuantity()
 }
+
+function updateCartQuantity(){
+  let cartQuantity = 0;
+  cart.forEach((cartItem) =>{
+    cartQuantity += cartItem.quantity;
+  })
+  document.querySelector('.js-items')
+  .innerHTML = `Items(${cartQuantity})`;
+};
